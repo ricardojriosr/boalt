@@ -74,6 +74,8 @@ class userDataRestController extends Controller
                 // Correct Credentials
                 if (Auth::check()) {
                     $user = Auth::user();
+                    if(!isset($_SESSION)) { session_start(); }
+                    $_SESSION['api_user_id'] = $user->id;
                     return response()->json([
                         "message" => "Logged In",
                         "user_id" => $user->id
@@ -90,13 +92,23 @@ class userDataRestController extends Controller
     }
 
     /*
+    Logout User and Delete Session
+    */
+    public function api_user_logout() {
+        if(!isset($_SESSION)) { session_start(); }
+        $_SESSION['api_user_id'] = "";
+        session_destroy();
+    }
+
+    /*
     Function to show User Info VIA API
     */
     public function api_user_info()  {
-        if (Auth::check()) {
-            $userId = Auth::id();
+        if(!isset($_SESSION)) { session_start(); }
+        if ((isset($_SESSION['api_user_id'])) && ($_SESSION['api_user_id'] != "")) {
+            $user = User::find($_SESSION['api_user_id']);
             return response()->json([
-                "user_id" => $userId
+                "user" => $user
             ], 200);
         } else {
             // Wrong Password
