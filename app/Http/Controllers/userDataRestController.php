@@ -98,6 +98,9 @@ class userDataRestController extends Controller
         if(!isset($_SESSION)) { session_start(); }
         $_SESSION['api_user_id'] = "";
         session_destroy();
+        return response()->json([
+            "message" => "Logged Out"
+        ], 200);
     }
 
     /*
@@ -119,9 +122,9 @@ class userDataRestController extends Controller
     }
 
     public function api_yelp_info(Request $request) {
-        $clientId = env('YELP_CLIENT_ID'); //Data pulled from .env file
+        if (!isset($request->business_name)) { return response()->json(["errors" => "business_name parameter is required, eg: gary-danko-san-francisco"], 400); }
         $appKey =  env('YELP_API_KEY'); //Data pulled from .env file
-        $yelpApiEndpoint = "https://api.yelp.com/v3/businesses/" . $request->business_id;
+        $yelpApiEndpoint = "https://api.yelp.com/v3/businesses/" . $request->business_name;
         $response = Http::withHeaders([
             'authorization' => 'Bearer '. $appKey
         ])->get($yelpApiEndpoint)->json();
