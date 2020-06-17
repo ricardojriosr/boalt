@@ -1,0 +1,228 @@
+{
+	"info": {
+		"_postman_id": "67570f51-5d97-4a0b-8275-6d3bb44b31a3",
+		"name": "Boalt",
+		"description": "Project for Boalt made in Laravel\nBy Ricardo Rios",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:8000/api/user/register?email=ricardojriosr@hotmail.com&name=Ricardo Rios&password=secret",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/user/register?email=ricardojriosr@hotmail.com&name=Ricardo Rios&password=secret",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"register"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "ricardojriosr@hotmail.com"
+						},
+						{
+							"key": "name",
+							"value": "Ricardo Rios"
+						},
+						{
+							"key": "password",
+							"value": "secret"
+						}
+					]
+				},
+				"description": "Register API END"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/user/login?email=ricardojriosr@hotmail.com&password=secret",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/user/login?email=ricardojriosr@hotmail.com&password=secret",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "ricardojriosr@hotmail.com"
+						},
+						{
+							"key": "password",
+							"value": "secret"
+						}
+					]
+				},
+				"description": "Login API Endpoint"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/user/info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/user/info",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"info"
+					]
+				},
+				"description": "Fetch User Data (logged in Protected)"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/yelp/api?business_name=gary-danko-san-francisco",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/yelp/api?business_name=gary-danko-san-francisco",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"yelp",
+						"api"
+					],
+					"query": [
+						{
+							"key": "business_name",
+							"value": "gary-danko-san-francisco"
+						}
+					]
+				},
+				"description": "External YELP API call"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/notification/new?notification=This is a message for notifications",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/notification/new?notification=This is a message for notifications",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"notification",
+						"new"
+					],
+					"query": [
+						{
+							"key": "notification",
+							"value": "This is a message for notifications"
+						}
+					]
+				},
+				"description": "REST API endpoint to add notifications"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/notification/show",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/notification/show",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"notification",
+						"show"
+					]
+				},
+				"description": "REST API endpoint to add notifications"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/notification/update?notification_id=1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/notification/update?notification_id=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"notification",
+						"update"
+					],
+					"query": [
+						{
+							"key": "notification_id",
+							"value": "1"
+						}
+					]
+				},
+				"description": "REST API Endpoint to update by read or unread notification "
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

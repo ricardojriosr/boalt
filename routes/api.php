@@ -31,7 +31,7 @@ Route::post('yelp/api', 'userDataRestController@api_yelp_info')->middleware('Aut
 // Protected Route(s): for Notification handling "must be logged in"
 Route::post('notification/new', 'NotificationController@store')->middleware('AuthSession'); // Route to Create Notification
 Route::get('notification/show', 'NotificationController@show')->middleware('AuthSession'); // Route to Show Notifications
-Route::post('notification/update', 'NotificationController@update_status')->middleware('AuthSession'); // Route to Show Notifications
+Route::post('notification/update', 'NotificationController@update_status')->middleware('AuthSession'); // Route to Update Read/Unread Notifications
 
 
 
